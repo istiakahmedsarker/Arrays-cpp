@@ -2,6 +2,7 @@
 using namespace std;
 
 int main() {
+    // * * extra space is (0)1 and in algorithm is the array
     temp = arr[0];
     for (int i = 1; i < n; i++)
     {
