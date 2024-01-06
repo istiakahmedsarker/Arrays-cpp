@@ -1,29 +1,45 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    arr[12] = {1,0,2,3,0,4,5,0,6,0,7,8};
-
-    // step 1
-    for (int i = 0; i < n; i++)
-    {
-        if(a[i] != 0){
+// * brute force
+vector<int> moveZeros(int n, vector<int> a) {
+    //temporary array:
+    vector<int> temp;
+    //copy non-zero elements
+    //from original -> temp array:
+    for (int i = 0; i < n; i++) {
+        if (a[i] != 0)
             temp.push_back(a[i]);
-        }
     }
-    // step 2
+
+    // number of non-zero elements.
     int nz = temp.size();
-    for (int i = 0; i < nz; i++)
-    {
+
+    //copy elements from temp
+    //fill first nz fields of
+    //original array:
+    for (int i = 0; i < nz; i++) {
         a[i] = temp[i];
     }
-    for (int i = nz; i < n; i++)
-    {
+
+    //fill rest of the cells with 0:
+    for (int i = nz; i < n; i++) {
         a[i] = 0;
     }
-    
-    
-    
-    cout << "" << endl;
+    return a;
+}
+
+
+int main()
+{
+    // ! brute force start
+    vector<int> arr = {1, 0, 2, 3, 2, 0, 0, 4, 5, 1};
+    int n = 10;
+    vector<int> ans = moveZeros(n, arr);
+    for (auto &it : ans) {
+        cout << it << " ";
+    }
+    // ! brute force end
+    cout << '\n';
     return 0;
 }
