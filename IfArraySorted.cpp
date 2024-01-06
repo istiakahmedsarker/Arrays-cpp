@@ -3,5 +3,15 @@ using namespace std;
 
 int main()
 {
-    return 0;
+    int arr[5] = {1, 2, 4, 3, 5};
+    
+    for (int i = 1; i < n ; i++) {
+        if (arr[i] >= arr[i-1] ) {
+            
+        }else{
+            return false;
+        }
+
+    }
+    return true;
 }
