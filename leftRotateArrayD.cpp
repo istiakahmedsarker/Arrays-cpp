@@ -17,8 +17,6 @@ int main()
         a[i] = temp[j];
         j++
     }
-
-    // ! optimal
     for (int i = n - d; i < n; i++)
     {
         a[i] = temp[i - (n - d)];
@@ -28,6 +26,13 @@ int main()
     {
         temp.pushback(arr[i]);
     }
+    
+
+    // ! optimal
+    reverse(arr,arr+d);
+    reverse(arr+d,arr+n);
+    reverse(arr,arr+n);
+
 
     cout << "" << endl;
     return 0;
