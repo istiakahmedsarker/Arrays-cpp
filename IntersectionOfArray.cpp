@@ -24,3 +24,27 @@ int main() {
     cout << "" << endl;
     return 0;
 }
+
+// ! optimal 
+{
+    int i =0;
+    int j = 0;
+    
+    vector<int> ans;
+
+    while(i<n && j<m){
+        if(A[i] <B[j]){
+            i++;
+        }
+        else if(A[i] >B[j]){
+            j++;
+        }
+        else{
+            ans.push_back(A[i]);
+            i++;
+            j++;
+        }
+    }
+
+    return ans;
+}
