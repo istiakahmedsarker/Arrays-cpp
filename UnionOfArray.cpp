@@ -35,27 +35,20 @@ int main()
 
 // ! optimal
 
-#include <bits/stdc++.h>
-#include <set>
-using namespace std;
-
-int main()
-{
-    int arr1[] = {1, 2, 3, 4, 5, 6, 7, 8};
-    int arr2[] = {1, 2, 3, 4, 5, 6, 9, 10};
-    int n1 = arr1.size();
-    int n1 = arr2.size();
+vector<int> sortedArray(vector<int> a, vector<int> b) {
+    int n1 = a.size();
+    int n2 = b.size();
     int i = 0;
     int j = 0;
     vector<int> unionArr;
 
     while (i < n1 && j < n2)
     {
-        if (arr1[i] <= arr2[j])
+        if (a[i] <= b[j])
         {
             if (unionArr.size() == 0 || unionArr.back() != a[i])
             {
-                unionArr.push_back(arr1[i]);
+                unionArr.push_back(a[i]);
             }
             i++;
         }
@@ -63,7 +56,7 @@ int main()
         {
             if (unionArr.size() == 0 || unionArr.back() != b[j])
             {
-                unionArr.push_back(arr1[i]);
+                unionArr.push_back(b[j]);
             }
             j++;
         }
@@ -73,18 +66,19 @@ int main()
     {
         if (unionArr.size() == 0 || unionArr.back() != b[j])
         {
-            unionArr.push_back(arr1[i]);
+            unionArr.push_back(b[j]);
         }
         j++;
     }
     while (i < n1)
     {
         if (unionArr.size() == 0 || unionArr.back() != a[i])
-            {
-                unionArr.push_back(arr1[i]);
-            }
-            i++;
+        {
+            unionArr.push_back(a[i]);
+        }
+        i++;
     }
 
     return unionArr;
 }
+
