@@ -2,6 +2,7 @@
 #include <set>
 using namespace std;
 
+// ! brute force
 int main() {
     int arr1[] = {1, 2, 3, 4, 5, 6, 7, 8};
     int arr2[] = {1, 2, 3, 4, 5, 6, 9, 10};
@@ -26,4 +27,28 @@ int main() {
     cout << endl;
 
     return 0;
+}
+
+// ! optimal
+
+#include <bits/stdc++.h>
+#include <set>
+using namespace std;
+
+int main() {
+    int arr1[] = {1, 2, 3, 4, 5, 6, 7, 8};
+    int arr2[] = {1, 2, 3, 4, 5, 6, 9, 10};
+    int n1 = arr1.size();
+    int n1 = arr2.size();
+    int i = 0;
+    int j = 0;
+    vector<int> unionArr;
+
+    while(i<n1 && j<n2) {
+        if(arr1[i] <= arr2[j]) {
+            if()
+        }
+    }
+
+    return unionArr;
 }
